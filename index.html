@@ -1,439 +1,98 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شبكة الحماية من البعوض</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Velora Markit - الطلب</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Tahoma,sans-serif;
-}
-
-body{
-background:#f8f9fa;
-color:#333;
-line-height:1.8;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-.hero{
-background:linear-gradient(135deg,#16a34a,#22c55e);
-color:white;
-padding:60px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:18px;
-margin-bottom:15px;
-}
-
-.price{
-font-size:40px;
-font-weight:bold;
-margin:20px 0;
-}
-
-.btn{
-display:inline-block;
-padding:15px 30px;
-background:white;
-color:#16a34a;
-text-decoration:none;
-border-radius:10px;
-font-weight:bold;
-}
-
-.main-product{
-text-align:center;
-margin:30px 0;
-}
-
-.main-product img{
-width:450px;
-max-width:100%;
-border-radius:15px;
-background:white;
-padding:10px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.colors{
-margin-top:20px;
-}
-
-.colors button{
-width:auto;
-padding:12px 20px;
-margin:5px;
-background:white;
-color:#16a34a;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.section{
-padding:60px 20px;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:30px;
-font-size:32px;
-color:#16a34a;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.card h3{
-margin-bottom:10px;
-color:#16a34a;
-}
-
-.review{
-background:white;
-padding:20px;
-border-radius:10px;
-margin:15px auto;
-max-width:700px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.order{
-background:#16a34a;
-padding:60px 20px;
-color:white;
-}
-
-form{
-max-width:600px;
-margin:auto;
-}
-
-input,
-textarea,
-select{
-width:100%;
-padding:15px;
-margin-bottom:15px;
-border:none;
-border-radius:8px;
-}
-
-.submit-btn{
-background:#111827;
-color:white;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-}
-
-footer{
-background:#111827;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-left:20px;
-width:60px;
-height:60px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-text-decoration:none;
-font-size:28px;
-color:white;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-z-index:999;
-}
-
-.badge{
-display:inline-block;
-background:#ffffff22;
-padding:10px 18px;
-margin:5px;
-border-radius:30px;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:30px;
-}
-
-.price{
-font-size:30px;
-}
-
-.section-title{
-font-size:24px;
-}
-
-}
-
+body{font-family:Arial,sans-serif;background:#faf7f5;color:#222;margin:0;padding:16px}
+main{max-width:500px;margin:auto;background:white;padding:20px;border-radius:18px}
+h1{text-align:center}
+.price{font-size:28px;font-weight:bold;text-align:center}
+label{display:block;margin-top:14px}
+input,select,button{width:100%;padding:14px;margin-top:6px;box-sizing:border-box;border-radius:10px;font-size:16px}
+input,select{border:1px solid #ccc}
+button{background:#159447;color:white;border:0;font-weight:bold;margin-top:20px}
+.note{color:#666;font-size:13px;line-height:1.7}
 </style>
 </head>
 <body>
-
-<section class="hero">
-
-<div class="container">
-
-<h1>
-🦟 وداعاً للبعوض والحشرات المزعجة
-</h1>
-
-<p>
-نم براحة وأمان مع شبكة الحماية القابلة للطي
-</p>
-
-<div class="main-product">
-
-<img id="productImage"
-src="mosquito-blue.webp.webp"
-alt="شبكة الحماية من البعوض">
-
-<div class="colors">
-
-<button type="button"
-onclick="changeColor('src="mosquito-blue.webp.webp'أزرق')">
-🔵 اللون الأزرق
-</button>
-
-<button type="button" onclick="changeColor('mosquito-pink.webp.webp','وردي')">
-🌸 اللون الوردي
-</button>
-
-</div>
-
-</div>
-
-<div class="price">
-140 درهم فقط
-</div>
-
-<div class="badge">🚚 شحن لجميع المدن المغربية</div>
-<div class="badge">💰 الدفع عند الاستلام</div>
-
-<br><br>
-
-<a href="#order" class="btn">
-اطلب الآن
-</a>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-لماذا هذا المنتج؟
-</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>✅ حماية فعالة</h3>
-<p>
-تمنع دخول البعوض والحشرات أثناء النوم.
-</p>
-</div>
-
-<div class="card">
-<h3>✅ سهلة التركيب</h3>
-<p>
-جاهزة للاستخدام خلال ثوانٍ قليلة.
-</p>
-</div>
-
-<div class="card">
-<h3>✅ قابلة للطي</h3>
-<p>
-يمكن حملها وتخزينها بسهولة.
-</p>
-</div>
-
-<div class="card">
-<h3>✅ آمنة للأطفال</h3>
-<p> بدون أي مواد كيميائية أو مبيدات.دم
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-آراء العملاء
-</h2>
-
-<div class="review">
-⭐⭐⭐⭐⭐<br>
-منتج ممتاز وسهل الاستعمال.
-</div>
-
-<div class="review">
-⭐⭐⭐⭐⭐<br>
-وصل بسرعة وحل مشكلة البعوض نهائياً.
-</div>
-
-<div class="review">
-⭐⭐⭐⭐⭐<br>
-اشتريت أكثر من قطعة للعائلة.
-</div>
-
-</div>
-
-</section>
-
-<section class="order" id="order">
-
-<div class="container">
-
-<h2 class="section-title" style="color:white;">
-إرسال الطلب
-</h2>
+<main>
+<h1>Velora Markit</h1>
+<h2>حقيبة نسائية أنيقة</h2>
+<p class="price">279 درهم</p>
+<p>الدفع عند الاستلام</p>
 
 <form id="orderForm">
+<label>الاسم الكامل</label>
+<input id="name" required placeholder="الاسم الكامل">
 
-<select id="color" required>
-<option value="أزرق">أزرق</option>
-<option value="وردي">وردي</option>
+<label>رقم الهاتف</label>
+<input id="phone" type="tel" required placeholder="06XXXXXXXX">
+
+<label>المدينة والعنوان</label>
+<input id="address" required placeholder="المدينة والحي والعنوان">
+
+<label>اختاري اللون</label>
+<select id="color">
+<option>أسود</option>
+<option>بيج</option>
+<option>بني</option>
 </select>
 
-<input
-type="text"
-id="name"
-placeholder="الاسم الكامل"
-required>
-
-<input
-type="tel"
-id="phone"
-placeholder="رقم الهاتف"
-required>
-
-<input
-type="text"
-id="city"
-placeholder="المدينة"
-required>
-
-<textarea
-id="address"
-rows="4"
-placeholder="العنوان الكامل"
-required></textarea>
-
-<input
-class="submit-btn"
-type="submit"
-value="تأكيد الطلب عبر واتساب">
-
+<button type="submit">تأكيد الطلب عبر واتساب</button>
 </form>
 
-</div>
-
-</section>
-
-<footer>
-جميع الحقوق محفوظة © 2026
-</footer>
-
-<a
-href="https://wa.me/212764885273"
-target="_blank"
-class="whatsapp-float">
-💬
-</a>
+<p class="note">من بعد الضغط، غادي يتحل واتساب برسالة فيها معلومات الطلب. وسيتم إرسال محاولة لتسجيل الطلب في جدول البيانات.</p>
+<p id="status" class="note"></p>
+</main>
 
 <script>
+const WHATSAPP_NUMBER = "212764885273";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzFiRVrM8rCLs6JYUOpnUvOb3apleLS8Wj_g-uuhG4066jNabljOiMuGyxbtiB-wAdm/exec";
 
-function changeColor(image,color){
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-document.getElementById('productImage').src=image;
-document.getElementById('color').value=color;
+  const order = {
+    name: document.getElementById("name").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    address: document.getElementById("address").value.trim(),
+    product: "حقيبة نسائية أنيقة",
+    color: document.getElementById("color").value,
+    price: 279,
+    timestamp: new Date().toISOString()
+  };
 
-}
+  const message =
+    "السلام عليكم، بغيت نأكد الطلب:\n" +
+    "الاسم: " + order.name + "\n" +
+    "الهاتف: " + order.phone + "\n" +
+    "العنوان: " + order.address + "\n" +
+    "المنتج: " + order.product + "\n" +
+    "اللون: " + order.color + "\n" +
+    "الثمن: 279 درهم";
 
-document.getElementById('orderForm')
-.addEventListener('submit',function(e){
+  window.open(
+    "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
 
-e.preventDefault();
-
-let color=document.getElementById('color').value;
-let name=document.getElementById('name').value;
-let phone=document.getElementById('phone').value;
-let city=document.getElementById('city').value;
-let address=document.getElementById('address').value;
-
-let message=`🛒 طلب جديد
-
-📌 المنتج: شبكة الحماية من البعوض
-
-🎨 اللون: ${color}
-
-💰 السعر: 140 درهم
-
-👤 الاسم: ${name}
-
-📞 الهاتف: ${phone}
-
-🏙 المدينة: ${city}
-
-📍 العنوان: ${address}`;
-
-window.open(
-`https://wa.me/212764885273?text=${encodeURIComponent(message)}`,
-'_blank'
-);
-
+  fetch(APPS_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {"Content-Type": "text/plain;charset=utf-8"},
+    body: JSON.stringify(order)
+  }).then(function() {
+    document.getElementById("status").textContent =
+      "تمت محاولة إرسال الطلب. خاصنا نتأكدو واش تزاد فجدول البيانات.";
+  }).catch(function() {
+    document.getElementById("status").textContent =
+      "ما قدرناش نرسلو الطلب لجدول البيانات. تواصل عبر واتساب.";
+  });
 });
-
 </script>
-
 </body>
 </html>
